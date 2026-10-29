@@ -1,4 +1,5 @@
 import Container from "./SectionContainer";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -25,9 +26,12 @@ export default function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-              <button className="w-full sm:w-auto text-base font-semibold tracking-wide px-8 py-3.5 rounded-xl bg-[#083324] text-white hover:bg-[#0c4a35] transition-all shadow-md hover:shadow-lg cursor-pointer">
+              <Link
+                to="/menu"
+                className="w-full sm:w-auto text-center text-base font-semibold tracking-wide px-8 py-3.5 rounded-xl bg-[#083324] text-white hover:bg-[#0c4a35] transition-all shadow-md hover:shadow-lg"
+              >
                 Explore Menu
-              </button>
+              </Link>
               <button className="w-full sm:w-auto text-base font-semibold tracking-wide px-8 py-3.5 rounded-xl bg-white text-emerald-900 border border-emerald-200 hover:bg-emerald-50 transition-all cursor-pointer">
                 Book a Table
               </button>

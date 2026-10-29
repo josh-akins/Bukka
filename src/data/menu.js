@@ -776,7 +776,7 @@ export const menuItems = [
     category: "daily-specials",
     availableDays: ["Wednesday"],
     image: "/images/yam-garden-egg.jpg",
-    available: true,
+    available: false,
   },
   {
     id: "meal-080",
@@ -786,7 +786,7 @@ export const menuItems = [
     category: "daily-specials",
     availableDays: ["Wednesday"],
     image: "/images/banku-red-fish.jpg",
-    available: true,
+    available: false,
   },
   {
     id: "meal-081",

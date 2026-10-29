@@ -4,6 +4,8 @@ export default function SearchBar({
   value,
   onChange,
   placeholder = "Search...",
+  id,
+  ariaLabel,
 }) {
   return (
     <div className="relative w-full max-w-md">
@@ -13,9 +15,11 @@ export default function SearchBar({
 
       <input
         type="text"
+        id={id}
         value={value}
         onChange={onChange}
         placeholder={placeholder}
+        aria-label={ariaLabel}
         className="w-full pl-10 pr-4 py-2.5 text-xs md:text-sm lg:text-lg bg-white border border-gray-100  rounded-full text-gray-900 placeholder-gray focus:outline-none focus:ring-[#083324] focus:border-transparent transition-all shadow-sm"
       />
     </div>

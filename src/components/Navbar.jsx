@@ -1,14 +1,26 @@
 import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import { ShoppingCartIcon } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
+  };
+
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const normalizedQuery = searchQuery.trim();
+
+    navigate(
+      normalizedQuery
+        ? `/menu?search=${encodeURIComponent(normalizedQuery)}`
+        : "/menu",
+    );
   };
 
   useEffect(() => {
@@ -39,18 +51,25 @@ export default function Navbar() {
           </div>
         </Link>
         <div className="hidden md:flex items-center space-x-6">
-          <SearchBar
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Search dishes..."
-          />
+          <form
+            onSubmit={handleSearchSubmit}
+            aria-label="Search the menu"
+            className="w-full max-w-md"
+          >
+            <SearchBar
+              value={searchQuery}
+              onChange={handleSearchChange}
+              placeholder="Search dishes..."
+              ariaLabel="Search dishes"
+            />
+          </form>
           <div className="hidden md:flex text-xs md:text-sm lg:text-lg font-medium font-sans items-center space-x-6">
-            <a
-              href="#"
+            <Link
+              to="/menu"
               className="text-gray-600 hover:text-[#083324] transition-colors"
             >
               Menu
-            </a>
+            </Link>
             <a
               href="#"
               className="text-gray-600 hover:text-[#083324] transition-colors"

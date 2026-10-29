@@ -1,6 +1,7 @@
 import BrandIcon from "../assets/BrandIcon";
 import { siFacebook, siX, siInstagram } from "simple-icons";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -50,9 +51,9 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-sm">
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <Link to="/menu" className="hover:text-white transition-colors">
                   Our Menu
-                </a>
+                </Link>
               </li>
               <li>
                 <a href="#" className="hover:text-white transition-colors">

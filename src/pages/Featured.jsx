@@ -6,7 +6,7 @@ export default function FeaturedPage() {
   return (
     <section className="bg-gray-50 py-10">
       <Container>
-        <header className="mb-10">
+        <header className="mb-16">
           <h1 className="text-2xl font-bold text-emerald-950 md:text-4xl">
             Featured Meals
           </h1>
@@ -17,7 +17,7 @@ export default function FeaturedPage() {
         </header>
 
         {featuredMenuItems.length > 0 ? (
-          <div className="grid w-full grid-cols-1 justify-items-center gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid w-full grid-cols-1 space-y-8 justify-items-center gap-8 sm:grid-cols-3 lg:grid-cols-4">
             {featuredMenuItems.map((item) => (
               <MenuCard key={item.id} item={item} />
             ))}
