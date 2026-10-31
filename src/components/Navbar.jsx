@@ -70,19 +70,23 @@ export default function Navbar() {
             >
               Menu
             </Link>
-            <a
-              href="#"
-              className="text-gray-600 hover:text-[#083324] transition-colors"
+            <span
+              aria-disabled="true"
+              className="cursor-default text-gray-400"
+              title="Reviews are not available yet"
             >
               Reviews
-            </a>
+            </span>
           </div>
         </div>
 
         <div className="flex items-center gap-2">
-          <button className="flex text-xs md:text-sm lg:text-lg items-center text-emerald-800 border border-emerald-800 px-4 py-2 rounded-full cursor-pointer hover:bg-emerald-800 hover:text-white transition-all duration-200">
+          <Link
+            to="/menu"
+            className="flex text-xs md:text-sm lg:text-lg items-center text-emerald-800 border border-emerald-800 px-4 py-2 rounded-full cursor-pointer hover:bg-emerald-800 hover:text-white transition-all duration-200"
+          >
             Get Started
-          </button>
+          </Link>
           <ShoppingCartIcon className="w-5 h-5 text-emerald-500 shrink-0" />
         </div>
       </div>
